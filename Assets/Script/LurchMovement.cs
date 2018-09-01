@@ -118,7 +118,7 @@ public class LurchMovement : MonoBehaviour {
         }
     }
 
-    bool LurchOnGround()
+    public bool LurchOnGround()
     {
         RaycastHit hit;
         if (Physics.Raycast(theLurch.position, Vector3.down, out hit, 0.4f))
