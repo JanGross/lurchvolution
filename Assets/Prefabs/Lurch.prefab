@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4211561106277860}
   m_Layer: 0
   m_Name: Lurch
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,6 +35,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4349673492578080}
   - component: {fileID: 114123996009525022}
+  - component: {fileID: 114729016115082176}
+  - component: {fileID: 114557432824313468}
+  - component: {fileID: 114003328164428386}
   m_Layer: 0
   m_Name: CameraHolder
   m_TagString: Untagged
@@ -71,6 +74,7 @@ GameObject:
   - component: {fileID: 23689017160285550}
   - component: {fileID: 65346116814365424}
   - component: {fileID: 54155385480013682}
+  - component: {fileID: 108062020484346290}
   m_Layer: 0
   m_Name: LurchTest
   m_TagString: Untagged
@@ -249,6 +253,63 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1444907702125456}
   m_Enabled: 1
+--- !u!108 &108062020484346290
+Light:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1462012476334488}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 5
+  m_Range: 20
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!114 &114003328164428386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1444832767951054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167337a6a977deb408440dbf31acb6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  lowerBounds: {fileID: 0}
+  lurch: {fileID: 1462012476334488}
+  UpdateFrequenzy: 15
+  maxFallDist: 25
+  respawnKey: 114
 --- !u!114 &114123996009525022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -275,3 +336,51 @@ MonoBehaviour:
   cooldown: 0
   canGlide: 1
   glideForce: 3
+--- !u!114 &114557432824313468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1444832767951054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b614d5a678d653549b924deec5548458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardRadius: 20
+  standardIntensity: 5
+  tinyRadius: 7
+  tinyIntensity: 4
+  maxRadius: 150
+  maxIntensity: 6
+  emissionMultiplier: 1
+  maxEmission: 1.5
+  minEmission: 0.25
+  baseEmission: 0.5
+  triggerButton: 102
+  litDuration: 4
+  unLitDuration: 3
+  animationSpeed: 1
+  state: 0
+  t: 0
+  ldCounter: 0
+--- !u!114 &114729016115082176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1444832767951054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167337a6a977deb408440dbf31acb6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  lowerBounds: {fileID: 0}
+  lurch: {fileID: 1462012476334488}
+  UpdateFrequenzy: 15
+  maxFallDist: 25
+  respawnKey: 114
