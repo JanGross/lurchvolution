@@ -24,7 +24,9 @@ public class LurchMovement : MonoBehaviour {
 
     [Header("Jump Charge")]
     public float maxJumpForce;
+    public float upForceModifier = 2.0f;
     private float currentJumpForce;
+    private float currentJumpForwardForce;
     public float forceIncreaseSpeed;
 
     public Color normalColor;
@@ -142,7 +144,7 @@ public class LurchMovement : MonoBehaviour {
             lurchBody.isKinematic = false;
 
             lurchBody.AddForce(theLurch.forward * currentJumpForce, ForceMode.Impulse);
-            lurchBody.AddForce(theLurch.up * currentJumpForce, ForceMode.Impulse);
+            lurchBody.AddForce(theLurch.up * currentJumpForce * upForceModifier, ForceMode.Impulse);
         }
         else if (LurchOnGround() && Time.time > cooldown)
         {
