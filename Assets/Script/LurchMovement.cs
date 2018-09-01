@@ -114,7 +114,6 @@ public class LurchMovement : MonoBehaviour {
         if (Input.GetButton("Fire1") && currentJumpForce < maxJumpForce)
         {
             currentJumpForce += forceIncreaseSpeed;
-
             lerpedColor = Color.Lerp(normalColor, fullyChargedColor, t);
             if (t < 1.0f)
             {
@@ -175,7 +174,7 @@ public class LurchMovement : MonoBehaviour {
 
     }
 
-    bool LurchOnGround()
+    public bool LurchOnGround()
     {
         RaycastHit hit;
         if (Physics.Raycast(theLurch.position, Vector3.down, out hit, 0.36f) && cooldown <= 0.0f)
