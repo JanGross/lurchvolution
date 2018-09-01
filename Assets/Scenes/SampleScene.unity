@@ -477,6 +477,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114123996009525022, guid: 8bcf2afca6664234f83b5ee8381b1975,
+        type: 2}
+      propertyPath: canGlide
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114123996009525022, guid: 8bcf2afca6664234f83b5ee8381b1975,
+        type: 2}
+      propertyPath: glideForce
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bcf2afca6664234f83b5ee8381b1975, type: 2}
   m_IsPrefabAsset: 0
