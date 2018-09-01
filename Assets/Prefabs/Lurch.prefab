@@ -271,7 +271,7 @@ MonoBehaviour:
   fullyChargedColor: {r: 0.95649004, g: 0, b: 1, a: 0}
   normalSize: {x: 0, y: 0, z: 0}
   chargedSizeModifier: 0.5
-  canStick: 1
+  canStick: 0
   cooldown: 0
-  canGlide: 1
+  canGlide: 0
   glideForce: 3
