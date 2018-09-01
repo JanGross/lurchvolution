@@ -45,6 +45,12 @@ public class LurchMovement : MonoBehaviour {
     public bool canStick;
     [SerializeField]
     private float cooldown;
+    [SerializeField]
+    private Transform stickPoint;
+    private bool stickToGround = false;
+    [SerializeField]
+    private float stickyOffset = 1;
+
 
     [Header("Gliding")]
     public bool canGlide;
@@ -58,6 +64,7 @@ public class LurchMovement : MonoBehaviour {
         normalSize = theLurch.transform.localScale;
         chargedSize = theLurch.transform.localScale * chargedSizeModifier;
         glideSize = new Vector3(normalSize.x, normalSize.y * 0.5f, normalSize.z);
+        stickPoint = new GameObject().transform;
 
     }
 
@@ -72,6 +79,7 @@ public class LurchMovement : MonoBehaviour {
         JumpControl();
         SmoothFollow();
         Gliding();
+        StickToPoint();
     }
 
     void MouseControl()
@@ -142,17 +150,28 @@ public class LurchMovement : MonoBehaviour {
         if (Input.GetButtonUp("Fire1")) {
             cooldown = 0.5f;
             lurchBody.isKinematic = false;
+            stickToGround = false;
 
             lurchBody.AddForce(theLurch.forward * currentJumpForce, ForceMode.Impulse);
             lurchBody.AddForce(theLurch.up * currentJumpForce * upForceModifier, ForceMode.Impulse);
         }
         else if (LurchOnGround() && Time.time > cooldown)
         {
+            //stickToGround = true;
             lurchBody.isKinematic = true;
         }
         else if (!LurchOnGround() && Time.time > cooldown && !AmSticking())
         {
             currentJumpForce = 0.0f;
+        }
+
+        if (AmSticking())
+        {
+            lurchBody.isKinematic = true;
+        }
+        else
+        {
+            lurchBody.isKinematic = false;
         }
 
     }
@@ -179,13 +198,15 @@ public class LurchMovement : MonoBehaviour {
     public bool LurchOnGround()
     {
         RaycastHit hit;
-        if (Physics.Raycast(theLurch.position, Vector3.down, out hit, 0.36f) && cooldown <= 0.0f)
+        if (Physics.Raycast(theLurch.position, Vector3.down, out hit, 0.34f) && cooldown <= 0.0f)
         {
-            return true;
-        }
-
-        if (AmSticking())
-        {
+            if (!stickToGround)
+            {
+                lurchBody.isKinematic = true;
+                stickPoint.parent = hit.transform;
+                stickPoint.position = hit.point;
+                stickToGround = true;
+            }
             return true;
         }
 
@@ -207,5 +228,13 @@ public class LurchMovement : MonoBehaviour {
         }
 
         return false;
+    }
+
+    public void StickToPoint()
+    {
+        if (stickToGround)
+        {
+            theLurch.position = stickPoint.position + new Vector3(0, stickyOffset, 0);
+        }
     }
 }
