@@ -192,14 +192,16 @@ public class LurchMovement : MonoBehaviour {
 
     bool AmSticking()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(theLurch.position, theLurch.forward, out hit, 1.4f))
-        {
-            return true;
-        }
-        if (lurchBody.isKinematic)
-        {
-            return true;
+        if (canStick) {
+            RaycastHit hit;
+            if (Physics.Raycast(theLurch.position, theLurch.forward, out hit, 1.4f))
+            {
+                return true;
+            }
+            if (lurchBody.isKinematic)
+            {
+                return true;
+            }
         }
 
         return false;
