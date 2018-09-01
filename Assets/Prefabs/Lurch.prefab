@@ -265,9 +265,13 @@ MonoBehaviour:
   lockMouse: 1
   speed: 0.5
   theLurch: {fileID: 4675101163920296}
-  lurchMaterial: {fileID: 0}
   maxJumpForce: 10
   forceIncreaseSpeed: 0.5
   normalColor: {r: 0.14509805, g: 0.4784314, b: 1, a: 0}
-  fullyChargedColor: {r: 1, g: 0.6223973, b: 0, a: 0}
+  fullyChargedColor: {r: 0.95649004, g: 0, b: 1, a: 0}
+  normalSize: {x: 0, y: 0, z: 0}
+  chargedSizeModifier: 0.5
   canStick: 1
+  cooldown: 0
+  canGlide: 1
+  glideForce: 3
