@@ -37,7 +37,6 @@ GameObject:
   - component: {fileID: 114123996009525022}
   - component: {fileID: 114729016115082176}
   - component: {fileID: 114557432824313468}
-  - component: {fileID: 114003328164428386}
   m_Layer: 0
   m_Name: CameraHolder
   m_TagString: Untagged
@@ -75,6 +74,7 @@ GameObject:
   - component: {fileID: 65346116814365424}
   - component: {fileID: 54155385480013682}
   - component: {fileID: 108062020484346290}
+  - component: {fileID: 114778702397545226}
   m_Layer: 0
   m_Name: LurchTest
   m_TagString: Untagged
@@ -89,7 +89,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376713935733488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23070383, y: 3.253488, z: -7.428097}
+  m_LocalPosition: {x: -0.23070383, y: 3.253488, z: -3.7380967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4349673492578080}
@@ -259,7 +259,7 @@ Light:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1462012476334488}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -290,26 +290,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114003328164428386
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1444832767951054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 167337a6a977deb408440dbf31acb6c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  lowerBounds: {fileID: 0}
-  lurch: {fileID: 1462012476334488}
-  UpdateFrequenzy: 15
-  maxFallDist: 25
-  respawnKey: 114
 --- !u!114 &114123996009525022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -326,14 +306,17 @@ MonoBehaviour:
   lockMouse: 1
   speed: 0.5
   theLurch: {fileID: 4675101163920296}
-  maxJumpForce: 10
-  forceIncreaseSpeed: 0.5
+  maxJumpForce: 6
+  upForceModifier: 1.45
+  forceIncreaseSpeed: 0.3
   normalColor: {r: 0.14509805, g: 0.4784314, b: 1, a: 0}
   fullyChargedColor: {r: 0.95649004, g: 0, b: 1, a: 0}
   normalSize: {x: 0, y: 0, z: 0}
   chargedSizeModifier: 0.5
   canStick: 0
-  cooldown: 0
+  cooldown: 0.4
+  stickPoint: {fileID: 0}
+  stickyOffset: 0.29
   canGlide: 0
   glideForce: 3
 --- !u!114 &114557432824313468
@@ -342,7 +325,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1444832767951054}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b614d5a678d653549b924deec5548458, type: 3}
   m_Name: 
@@ -379,8 +362,23 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   lowerBounds: {fileID: 0}
   lurch: {fileID: 1462012476334488}
   UpdateFrequenzy: 15
-  maxFallDist: 25
+  maxFallDist: 30
+  maxDistanceToPoint: 2.5
   respawnKey: 114
+--- !u!114 &114778702397545226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1462012476334488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1dd69d76390844a9d00d3887a0fe61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
