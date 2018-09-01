@@ -31,7 +31,7 @@ public class MateMate : MonoBehaviour {
             other.transform.root.GetComponentInChildren<LurchMovement>().canGlide = true;
 
             if(mateGlow)
-            //other.transform.root.GetComponentInChildren<LurchMovement>().canGlide = true;
+            other.transform.root.GetComponentInChildren<LightLurch>().enabled = true;
 
             cutscene.SetActive(true);
         }

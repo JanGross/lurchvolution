@@ -54,6 +54,7 @@ public class LightLurch : MonoBehaviour {
         lurchRenderer.material.SetColor("_EmissionColor", lightSource.color * (emissionMultiplier * emissionValue));
         emissionValue = baseEmission;
         lurchRenderer.material.EnableKeyword("_EMISSION");
+        lightSource.enabled = true;
     }
 	
 	// Update is called once per frame
