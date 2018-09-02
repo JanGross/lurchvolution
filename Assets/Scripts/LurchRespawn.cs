@@ -114,6 +114,7 @@ public class LurchRespawn : MonoBehaviour {
     public void RespawnLurch(string message = "Lurch respawned")
     {
         Debug.LogWarning("Lurch respawned: " + message);
+        compLurchMovement.DontStick();
         lurch.transform.position = lastRespawnPoint.transform.position;
     }
 

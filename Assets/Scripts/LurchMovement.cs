@@ -82,6 +82,10 @@ public class LurchMovement : MonoBehaviour {
         StickToPoint();
     }
 
+    public void DontStick()
+    {
+        stickToGround = false;
+    }
     void MouseControl()
     {
         float mouseInputX = Input.GetAxis("Mouse X") * mouseSensitivity;
