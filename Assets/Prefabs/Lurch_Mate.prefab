@@ -139,5 +139,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mateStick: 1
   mateGlide: 1
-  mateGlow: 0
+  mateGlow: 1
   cutscene: {fileID: 0}

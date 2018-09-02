@@ -747,11 +747,6 @@ Prefab:
       propertyPath: cutscene
       value: 
       objectReference: {fileID: 683171416}
-    - target: {fileID: 114998550230745890, guid: ee4009de840ac2b42901d59cebc5114a,
-        type: 2}
-      propertyPath: mateGlow
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee4009de840ac2b42901d59cebc5114a, type: 2}
   m_IsPrefabAsset: 0

@@ -30,6 +30,7 @@ public class LurchRespawn : MonoBehaviour {
     private int UpdateFrequenzy = 15;
     [SerializeField]
     private float maxFallDist = 100;
+    public float maxDistanceToPoint = 10.0f;
     [SerializeField]
     private KeyCode respawnKey = KeyCode.R;
 
@@ -102,7 +103,7 @@ public class LurchRespawn : MonoBehaviour {
         for (int i = lastRespawnPointIndex; i < respawnPoints.Count; i++)
         {
             nextPointDist = Vector3.Distance(transform.position, respawnPoints[i].transform.position);
-            if (nextPointDist < lastPointDist)
+            if (nextPointDist < lastPointDist && nextPointDist < maxDistanceToPoint)
             {
                 lastRespawnPoint = respawnPoints[i];
                 lastRespawnPointIndex = i;
