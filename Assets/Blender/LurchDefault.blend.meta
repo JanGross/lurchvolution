@@ -1,18 +1,27 @@
 fileFormatVersion: 2
-
-guid: 92769698617cda944a6083e435fee3e4
-
+guid: fb7268f3c467f3a4898ca0bdb139c09e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: LurchDefault
+    100004: Mball_005
     400000: //RootNode
+    400002: LurchDefault
+    400004: Mball_005
     2100000: unnamed
     2300000: //RootNode
+    2300002: LurchDefault
+    2300004: Mball_005
     3300000: //RootNode
-    4300000: Icosphere
+    3300002: LurchDefault
+    3300004: Mball_005
+    4300000: LurchDefault
+    4300002: Mball_005
+    4300004: Cube
     7400000: Default Take
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1

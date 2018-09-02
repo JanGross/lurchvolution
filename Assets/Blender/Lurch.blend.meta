@@ -1,7 +1,5 @@
 fileFormatVersion: 2
-
-guid: 92769698617cda944a6083e435fee3e4
-
+guid: 6a6de681c89983e46825958ca472df07
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -10,7 +8,7 @@ ModelImporter:
     2100000: unnamed
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Icosphere
+    4300000: Mball
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
