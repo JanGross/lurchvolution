@@ -1,13 +1,16 @@
 fileFormatVersion: 2
+
 guid: d336f86cc18e4c646a8f4ee463e65728
+
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Material
-    2100002: Bottom
-    2100004: Top
+
+    2100000: Bottom
+    2100002: Top
+
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
