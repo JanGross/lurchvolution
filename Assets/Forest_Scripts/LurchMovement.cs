@@ -50,7 +50,7 @@ public class LurchMovement : MonoBehaviour {
     private bool stickToGround = false;
     [SerializeField]
     private float stickyOffset = 1;
-
+    private bool blockCharge = false;
 
     [Header("Gliding")]
     public bool canGlide;
@@ -82,6 +82,10 @@ public class LurchMovement : MonoBehaviour {
         StickToPoint();
     }
 
+    public void DontStick()
+    {
+        stickToGround = false;
+    }
     void MouseControl()
     {
         float mouseInputX = Input.GetAxis("Mouse X") * mouseSensitivity;
@@ -121,7 +125,11 @@ public class LurchMovement : MonoBehaviour {
 
     void JumpControl()
     {
-        if (Input.GetButton("Fire1") && currentJumpForce < maxJumpForce)
+        if (Input.GetButtonDown("Fire1"))
+        {
+            blockCharge = false;
+        }
+        if (Input.GetButton("Fire1") && currentJumpForce < maxJumpForce && cooldown <= 0 && !blockCharge )
         {
             currentJumpForce += forceIncreaseSpeed;
             lerpedColor = Color.Lerp(normalColor, fullyChargedColor, t);
@@ -137,7 +145,7 @@ public class LurchMovement : MonoBehaviour {
         {
             lerpedColor = normalColor;
             t = 0.0f;
-            currentSize = normalSize;
+            currentSize = Vector3.Lerp(currentSize, normalSize, Time.deltaTime * 5f);
 
         }
 
@@ -147,13 +155,19 @@ public class LurchMovement : MonoBehaviour {
             currentJumpForce = 0.0f;
         }
 
-        if (Input.GetButtonUp("Fire1")) {
+        if (Input.GetButtonUp("Fire1") && cooldown <= 0 && !blockCharge) {
             cooldown = 0.5f;
             lurchBody.isKinematic = false;
             stickToGround = false;
 
             lurchBody.AddForce(theLurch.forward * currentJumpForce, ForceMode.Impulse);
             lurchBody.AddForce(theLurch.up * currentJumpForce * upForceModifier, ForceMode.Impulse);
+        }
+        else if (Input.GetButton("Fire2")) {
+            currentJumpForce = 0.0f;
+            cooldown = 0.5f;
+            currentSize = Vector3.Lerp(currentSize, normalSize, Time.deltaTime * 5f);
+            blockCharge = true;
         }
         else if (LurchOnGround() && Time.time > cooldown)
         {

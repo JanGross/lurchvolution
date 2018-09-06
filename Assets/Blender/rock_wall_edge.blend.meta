@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a407b81221217314cb2f3f58d53416b6
+guid: 9ce16e413ddf64b45b624f04e77768ab
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -9,6 +9,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
+    6400000: //RootNode
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
@@ -44,7 +45,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
