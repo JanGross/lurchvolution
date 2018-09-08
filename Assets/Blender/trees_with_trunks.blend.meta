@@ -1,11 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 
 guid: 35d251ed30860a7478a010b09eba12a2
 
-=======
-guid: 35d251ed30860a7478a010b09eba12a2
->>>>>>> leveldesign_r
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -18,15 +14,10 @@ ModelImporter:
     400004: Icosphere_002
     400006: //RootNode
     2100000: unnamed
-<<<<<<< HEAD
 
     2100002: Leaves
     2100004: Trunk
 
-=======
-    2100002: Leaves
-    2100004: Trunk
->>>>>>> leveldesign_r
     2300000: Icosphere
     2300002: Icosphere_001
     2300004: Icosphere_002

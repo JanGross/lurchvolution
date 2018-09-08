@@ -53,7 +53,7 @@ public class DarkAmbience : MonoBehaviour {
             RenderSettings.ambientIntensity = Mathf.Lerp(defaultEnvLightingIntensity, targetEnvLightingIntensity, t);
             RenderSettings.reflectionIntensity = Mathf.Lerp(defaultEnfReflectionIntensity, targetEnfReflectionIntensity, t);
         }
-        else if (t < 1)
+        else
         {
             RenderSettings.ambientIntensity = Mathf.Lerp(targetEnvLightingIntensity, defaultEnvLightingIntensity, t);
             RenderSettings.reflectionIntensity = Mathf.Lerp(targetEnfReflectionIntensity, defaultEnfReflectionIntensity , t);
