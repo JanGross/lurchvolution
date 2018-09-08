@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 
 guid: b2571f564af29ac4aba093136c5074ae
 
+=======
+guid: b2571f564af29ac4aba093136c5074ae
+>>>>>>> leveldesign_r
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
