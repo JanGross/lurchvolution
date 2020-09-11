@@ -1111,7 +1111,7 @@ MonoBehaviour:
   lowerBounds: {fileID: 1697398368}
   lurch: {fileID: 696080851}
   UpdateFrequenzy: 15
-  maxFallDist: 250
+  maxFallDist: 450
   maxDistanceToPoint: 10
   respawnKey: 114
 --- !u!1 &935198953 stripped
